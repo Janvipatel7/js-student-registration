@@ -31,7 +31,7 @@ class stuManage {
                         <td>${student.emailId}</td>
                         <td>${student.gender}</td>
                         <td>${student.dob}</td>
-                        <td>
+                        <td class="d-flex flex-nowrap align-item-center gap-2">
                             <button class="btn btn-sm btn-warning" onclick="updateStudent(${idx})">📝</button>
                             <button class="btn btn-sm btn-danger" onclick="deleteStudent(${idx})"><i class="bi bi-trash"></i></button>
                         </td>
@@ -59,11 +59,60 @@ function createUpdateStudent() {
     let gridNo = document.querySelector("#grid").value.trim();
     let contactNo = document.querySelector("#number").value.trim();
     let mailId = document.querySelector("#mail").value.trim();
-    let gender = document.querySelector("input[name='gender']:checked")?.value || "";
+    let gender = document.querySelector("input[name='gender']:checked")?.value || null;
     let dob = document.querySelector("#dob").value.trim();
 
-    if (studentName === "" || gridNo === "" || contactNo === "" || mailId === "" || dob === "" || gender === "") {
-        alert("Please Fill Out The Form Correctly!");
+   
+    const nameRegex = /^[A-Za-z\s]+$/; 
+    const gridRegex =  /^\d{4}$/; 
+    const contactNoRegex = /^[0-9]{10}$/; 
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const dobRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+    if (!nameRegex.test(studentName)) {
+        Swal.fire({
+            text: "Please enter a valid name letters and spaces only.",
+            icon: "error"
+        });
+        return;
+    }
+
+    if (!gridRegex.test(gridNo)) {
+        Swal.fire({
+            text: "Please enter a valid grid number.",
+            icon: "error"
+        });
+        return;
+    }
+
+    if (!contactNoRegex.test(contactNo)) {
+        Swal.fire({
+            text: "Please enter a valid 10-digit contact number.",
+            icon: "error"
+        });
+        return;
+    }
+
+    if (!emailRegex.test(mailId)) {
+        Swal.fire({
+            text: "Please enter a valid email address.",
+            icon: "error"
+        });
+        return;
+    }
+
+    if (!dobRegex.test(dob)) {
+        Swal.fire({
+            text: "Enter a valid date of birth.",
+            icon: "error"   
+        });
+        return;
+    }
+    if(!gender){
+        Swal.fire({
+            text: "Select gender",
+            icon: "error"   
+        });
         return;
     }
 

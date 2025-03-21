@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <div class="d-flex justify-content-center align-items-center vh-100 flex-column">
         <div class="container">
@@ -25,7 +27,7 @@
                         <label class="form-label">Date of Birth :</label>
                         <input type="date" id="dob" class="form-control">
                     </div>
-                    
+
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -49,41 +51,45 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label class="form-label">GRID Number :</label>
-                        <input type="text" id="grid" class="form-control" placeholder="Enter GRID Number">
+                        <input type="number" id="grid" class="form-control" placeholder="Enter GRID Number">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Contact Number :</label>
                         <input type="tel" id="number" class="form-control" placeholder="Enter contact number">
                     </div>
                 </div>
-                
+
                 <div class="d-grid">
                     <button type="submit" id="submit" class="btn btn-primary">Register</button>
                 </div>
             </form>
         </div>
-        
+
         <div class="table-container container mt-4">
             <h3 class="text-center mb-3">Student's List</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>GRID</th>
-                        <th>Contact Number</th>
-                        <th>Email ID</th>
-                        <th>Gender</th>
-                        <th>Date of Birth</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="studentTable">
-                    
-                </tbody>
-            </table>
+            <div class="nsdsi">
+                <table class="table  table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-nowrap">Name</th>
+                            <th class="text-nowrap">GRID</th>
+                            <th class="text-nowrap">Contact Number</th>
+                            <th class="text-nowrap">Email ID</th>
+                            <th class="text-nowrap">Gender</th>
+                            <th class="text-nowrap">Date of Birth</th>
+                            <th class="text-nowrap">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable">
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script src="./assets/js/bootstrap.js"></script>
     <script src="./assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>
