@@ -79,7 +79,7 @@ function createUpdateStudent() {
 
     if (!gridRegex.test(gridNo)) {
         Swal.fire({
-            text: "Please enter a valid grid number.",
+            text: "Please enter a valid 4-digit grid number.",
             icon: "error"
         });
         return;
@@ -123,7 +123,7 @@ function createUpdateStudent() {
     } else {
         manage.update(updateIdx, student);
         updateIdx = null;
-        document.getElementById("submit").textContent = "Register";
+        document.getElementById("submit").innerHTML = "Register";
     }
     resetForm();
 }
